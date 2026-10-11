@@ -1,11 +1,11 @@
 <h1 align="center">BeVe-VAE</h1>
 
 <p align="center">
-  <b>Variational Autoencoders · Latent Representations · Intervention</b>
+  <b>Disentangled Representation Learning</b>
 </p>
 
 <p align="center">
-  OMS4 Part 1<br>
+
   BeVe-VAE and comparisons with VAE, β-VAE, and VO-VAE on 3D Shapes.
 </p>
 
@@ -118,6 +118,19 @@ python subtasks/intervention/exec.py --config=betavo_vae.3dshapes
 Additional data processing and visualization utilities are described in [`subtasks/README.md`](subtasks/README.md).
 
 ## 📊 Results
+
+### Quantitative Evaluation
+
+DCI and MAE on the evaluation dataset. **Bold** indicates the best result, and <u>underlining</u> indicates the second-best result. Higher DCI and lower MAE are better.
+
+| Method | DCI ↑ | MAE ↓ |
+| :--- | :---: | :---: |
+| VAE | 0.1344 | 1.3104 |
+| β-VAE | <u>0.2675</u> | 1.2813 |
+| VAE + ℒ<sub>orth</sub> | 0.1721 | **1.2580** |
+| **BeVe-VAE (Ours)** | **0.2837** | <u>1.2742</u> |
+
+VAE + ℒ<sub>orth</sub> corresponds to VO-VAE in the model and configuration tables above.
 
 ### Reconstruction
 
